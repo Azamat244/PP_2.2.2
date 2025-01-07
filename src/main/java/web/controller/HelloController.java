@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.ArrayList;
 import java.util.List;
 
-@Controller
+@Controller // также является бином который найдется при сканировании пакета
+@RequestMapping ("/hello")
 public class HelloController {
 
-	@GetMapping(value = "/")
+	@GetMapping()
 	public String printWelcome(ModelMap model) {
 		List<String> messages = new ArrayList<>();
 		messages.add("Hello!");

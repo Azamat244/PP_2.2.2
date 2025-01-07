@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cars</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Cars List</h1>
+<ul>
+    <!-- Перебираем список машин и отображаем каждую -->
+    <li th:each="car : ${cars}">
+        <span th:text="${car.model} + ' (' + ${car.color} + ', ' + ${car.cost} +')'"></span>
+    </li>
+</ul>
+
+<hr>
+<form action="/cars" method="get">
+    <label for="count">Введите количество машин:</label>
+    <input type="number" id="count" name="count" min="1">
+    <button type="submit">Потвердить</button>
+</form>
+</body>
+</html>
