@@ -6,18 +6,17 @@
 </head>
 <body>
 <h1>Cars List</h1>
-<ul>
-    <!-- Перебираем список машин и отображаем каждую -->
-    <li th:each="car : ${cars}">
-        <span th:text="${car.model} + ' (' + ${car.color} + ', ' + ${car.cost} +')'"></span>
-    </li>
-</ul>
 
-<hr>
-<form action="/cars" method="get">
-    <label for="count">Введите количество машин:</label>
-    <input type="number" id="count" name="count" min="1">
-    <button type="submit">Потвердить</button>
-</form>
+<!-- Перебираем список машин и отображаем каждую -->
+<th:block th:each="car : ${cars}">
+    <p th:text="${car.model} + ' (' + ${car.color} + ', ' + ${car.cost} +')'">
+    </p>
+</th:block>
+
+
+<th:block th:each="car1 : ${cars1}">
+    <p th:text="${car1.model} + ' (' + ${car1.color} + ', ' + ${car1.cost} +')'">
+    </p>
+</th:block>
 </body>
 </html>
