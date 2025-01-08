@@ -22,7 +22,7 @@ public class CarController {
         if (count == null || count <= 0) {
             model.addAttribute("cars", carServiceImpl.getCars());
         } else {
-            model.addAttribute("cars1", carServiceImpl.getAnyCars(carServiceImpl.getCars(), count));
+            model.addAttribute("cars", carServiceImpl.getAnyCars(carServiceImpl.getCars(), count));
         }
         return "cars";
     }
