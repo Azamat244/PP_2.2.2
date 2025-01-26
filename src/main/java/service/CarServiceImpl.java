@@ -1,12 +1,12 @@
-package Service;
+package service;
 
 import model.Car;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Service
 public class CarServiceImpl implements CarService {
 
     private List<Car> cars;
@@ -20,20 +20,10 @@ public class CarServiceImpl implements CarService {
         cars.add(new Car("Ford", "Green", 5000));
     }
 
-    public List<Car> getCars() {
-        return cars;
-    }
-
-
-    public List<Car> getAnyCars(List<Car> cars, Integer count) {
-        List<Car> newCars = new ArrayList<>();
-        if ((count >= cars.size()) || (count <= 0)) {
-            return cars;
-        }
-        for (int i = 0; i < count; i++) {
-            newCars.add(cars.get(i));
-        }
-        return newCars;
+    public List<Car> getAnyCars(Integer count) {
+        List <Car> newCar;
+        newCar = cars.stream().limit(count).toList();
+        return newCar;
     }
 
 }

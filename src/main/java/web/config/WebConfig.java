@@ -13,7 +13,7 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 @Configuration // это конфиг класс
 @EnableWebMvc //говорит о том что это конфига именно web-приложения и включает компоненты необходимые для работы веб приложения
-@ComponentScan(basePackages = {"web", "Service"}) //показываем где сканировать бины для спринга
+@ComponentScan(basePackages = {"web", "service"}) //показываем где сканировать бины для спринга
 public class WebConfig implements WebMvcConfigurer {
 
     private final ApplicationContext applicationContext;
